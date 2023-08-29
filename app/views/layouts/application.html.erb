@@ -18,7 +18,7 @@
         <%= image_tag("logo.png", alt: "logo chat noir", class: "h-9") %>
       </a>
       <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-        <li><a class="hover:text-gray-200" href="#">Accueil</a></li>
+        <li><a class="hover:text-gray-200" href="<%= root_path %>">Accueil</a></li>
         <li><a class="hover:text-gray-200" href="#">Boutique</a></li>
         <li><a class="hover:text-gray-200" href="#">Contact</a></li>
       </ul>
@@ -32,18 +32,16 @@
             <span class="relative inline-flex rounded-full h-3 w-3 bg-pink-500"></span>
           </span>
         </a>
-        <div class="flex items-center md:order-2">
-          <div class="relative">
-            <button type="button" class="flex items-center hover:text-gray-200 focus:outline-none" id="auth-dropdown-toggle" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hover:text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </button>
-            <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-200 rounded-lg shadow-md hidden" id="auth-dropdown" aria-labelledby="auth-dropdown-toggle">
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Sign In</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Register</a>
-            </div>
-          </div>
+                <!-- Bouton S'inscrire/Se connecter -->
+        <div class="hidden xl:flex items-center space-x-5 items-center">
+          <% if user_signed_in? %>
+            <%= form_tag(destroy_user_session_path, method: :delete, class: "hover:text-gray-200") do %>
+              <%= submit_tag "Se déconnecter", class: "hover:text-gray-200" %>
+            <% end %>
+          <% else %>
+            <a class="hover:text-gray-200" href="<%= new_user_session_path %>">Se connecter</a>
+            <a class="hover:text-gray-200" href="<%= new_user_registration_path %>">S'inscrire</a>
+          <% end %>
         </div>
       </div>
       <a class="xl:hidden flex mr-6 items-center" href="#">
