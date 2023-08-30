@@ -1,0 +1,21 @@
+<div class="flex justify-center items-center h-screen">
+  <div class="w-full max-w-3xl p-4">
+    <div class="bg-custom-color rounded-lg shadow-md md:flex-row md:flex">
+      <div class="md:w-48 md:bg-cover md:bg-no-repeat md:bg-left rounded-t-lg md:rounded-none md:rounded-l-lg" style="background-image: url('/assets/chat8.jpg');"></div>
+      <div class="flex flex-col p-4 leading-normal">
+        <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Profil de <%= @user.first_name %> <%= @user.last_name %></h5>
+        <p><strong>Email :</strong> <%= @user.email %></p>
+        <p><strong>Prénom :</strong> <%= @user.first_name %></p>
+        <p><strong>Nom :</strong> <%= @user.last_name %></p>
+        <!-- Ajoutez d'autres informations à afficher ici -->
+
+        <div class="mt-4">
+          <%= link_to "Modifier le profil", edit_profile_path, class: "mt-2 bg-gray-500 hover:bg-gray-400 text-white font-semibold py-2 px-3 rounded focus:outline-none focus:shadow-outline text-sm" %>
+          <%= link_to "Modifier le Mot de passe", edit_user_registration_path, class: "mt-2 bg-green-500 hover:bg-green-700 text-white font-semibold py-2 px-3 rounded focus:outline-none focus:shadow-outline text-sm" %>
+          <%= link_to "Mes Commandes", "#", class: "mt-2 bg-blue-500 hover:bg-blue-700 text-white font-semibold py-2 px-3 rounded focus:outline-none focus:shadow-outline text-sm" %>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
