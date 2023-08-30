@@ -89,3 +89,16 @@ body {
 .social-icon i {
   color: black;
 }
+
+
+.bg-custom-color {
+  background-color: #615b57;
+}
+
+.bg-custom-color:hover {
+  background-color: #A89585;
+}
+
+.card-bg-custom-color {
+  background-color: #C2B0A2;
+}
