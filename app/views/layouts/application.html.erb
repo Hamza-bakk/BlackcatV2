@@ -21,6 +21,9 @@
         <li><a class="hover:text-gray-200" href="<%= root_path %>">Accueil</a></li>
         <li><a class="hover:text-gray-200" href="<%= items_path %>">Boutique</a></li>
         <li><a class="hover:text-gray-200" href="<%= contact_path %>">Contact</a></li>
+        <% if user_signed_in? && current_user.admin? %>
+          <li><a class="hover:text-gray-200" href="<%= dashboard_path %>">Dashboard</a></li>
+        <% end %>        
       </ul>
       <div class="hidden xl:flex items-center space-x-5 items-center">
         <% if user_signed_in? %>
