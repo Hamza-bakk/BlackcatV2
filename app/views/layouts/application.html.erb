@@ -12,14 +12,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-  <nav class="flex justify-between text-white w-screen" style="background-color: #C2B0A2; z-index: 100; position: relative;">
+  <nav class="flex justify-between text-black w-screen" style="background-color: #C2B0A2; z-index: 100; position: relative;">
     <div class="px-5 xl:px-12 py-6 flex w-full items-center">
-      <a class="text-3xl font-bold font-heading">
-        <%= image_tag("logo.png", alt: "logo chat noir", class: "h-9") %>
-      </a>
+          <a href="<%= root_path %>" class="text-3xl font-bold font-heading">
+            <%= image_tag("logo.png", alt: "logo chat noir", class: "h-9") %>
+          </a>
       <ul class="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
         <li><a class="hover:text-gray-200" href="<%= root_path %>">Accueil</a></li>
-        <li><a class="hover:text-gray-200" href="#">Boutique</a></li>
+        <li><a class="hover:text-gray-200" href="<%= items_path %>">Boutique</a></li>
         <li><a class="hover:text-gray-200" href="#">Contact</a></li>
       </ul>
       <div class="hidden xl:flex items-center space-x-5 items-center">
