@@ -1,6 +1,6 @@
-class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
-
+class UsersController < ApplicationRecord
+  before_commit :some_method, only:[:show, :edit, :update, :destroy]
+  has_one_attached :avatar
   # GET /users or /users.json
   def index
     @users = User.all
