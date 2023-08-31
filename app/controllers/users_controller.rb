@@ -1,7 +1,5 @@
 class UsersController < ApplicationRecord
-  before_commit :some_method, only:[:show, :edit, :update, :destroy]
   has_one_attached :avatar
-  before_action :authenticate_user!
   # GET /users or /users.json
   def index
     @users = User.all
@@ -42,6 +40,7 @@ class UsersController < ApplicationRecord
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
+    set_user
     respond_to do |format|
       if @user.update(user_params)
         format.html { redirect_to user_url(@user), notice: "User was successfully updated." }

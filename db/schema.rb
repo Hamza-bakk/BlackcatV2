@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema[7.0].define(version: 2023_08_31_074926) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_31_080824) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -41,10 +40,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_074926) do
     t.bigint "blob_id", null: false
     t.string "variation_digest", null: false
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
-=======
-ActiveRecord::Schema[7.0].define(version: 2023_08_31_080824) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  end
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -56,7 +52,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_31_080824) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
->>>>>>> development
   end
 
   create_table "cart_items", force: :cascade do |t|
