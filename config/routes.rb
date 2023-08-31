@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  devise_for :admins
   get 'items/index'
   get 'static_pages#index', to: 'static_pages#index'
   get 'contact', to: 'contact#index'
