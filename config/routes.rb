@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   devise_for :admins
+  namespace :admin do
+    resources :orders, only: [:index, :show, :update, :destroy]
+  end
   get 'items/index'
   get 'static_pages#index', to: 'static_pages#index'
   get 'contact', to: 'contact#index'
@@ -12,4 +15,5 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root "static_pages#index"
+
 end
