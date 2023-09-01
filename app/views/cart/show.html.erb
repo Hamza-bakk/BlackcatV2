@@ -1,0 +1,13 @@
+<% if @items.empty? == false%>
+  <% @items.each do |e| %>
+    <div class="cart-item">
+      <%= image_tag(e.item.image_url) %>
+      <p><%= e.item.title %></p>
+      <p>Quantité : <%= e.quantity %></p>
+      <p>Prix à l'unité: <%= e.item.price %></p>
+      <!-- Ajoutez ici d'autres détails tels que le prix, la description, etc. -->
+    </div>
+  <% end %>
+<% else %>
+  <p>Votre panier est vide.</p>
+<% end %>
