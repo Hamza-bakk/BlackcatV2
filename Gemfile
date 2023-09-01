@@ -77,3 +77,5 @@ end
 gem 'dotenv-rails'
 
 gem 'letter_opener', group: :development
+
+gem "table_print", "~> 1.5"

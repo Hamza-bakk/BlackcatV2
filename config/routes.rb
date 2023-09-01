@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   end
   resources :items, only: [:index, :show], path: 'produits'
   resource :profile, only: [:show, :edit, :update]
+  resources :cart
+  post 'cart/add_item/:item_id', to: 'cart#add_item', as: 'cart_add_item'
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
